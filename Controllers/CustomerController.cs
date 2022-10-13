@@ -9,11 +9,28 @@ namespace CustomerWithCqrs.Controllers
     [Route("v1/customer")]
     public class CustomerController : ControllerBase
     {
+        private readonly ICreateCustomerHandler _ICreateCustomerHandler;
+
+        public CustomerController (ICreateCustomerHandler ICreateCustomerHandler)
+        {
+            _ICreateCustomerHandler = ICreateCustomerHandler;
+        }
+
         [HttpPost]
         [Route("create")]
-        public CreateCustomerResponse CreateCustomer ([FromServices] ICreateCustomerHandler handler, [FromBody] CreateCustomerRequest customer)
+        public CreateCustomerResponse CreateCustomer ([FromBody] CreateCustomerRequest customer)
         {
-            return handler.Handle(customer);
+            var result =  _ICreateCustomerHandler.Handle(customer);
+
+            return result;
+        }
+        [HttpPost]
+        [Route("GetAll")]
+        public List<CreateCustomerResponse> GetAllCustomers ()
+        {
+            var result = _ICreateCustomerHandler.GetAllCustomers();
+
+            return result;
         }
     }
 }

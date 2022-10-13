@@ -6,5 +6,10 @@ namespace CustomerWithCqrs.Domain.Commands.Responses
         public string Name { get; set; }
         public string Email { get; set; }
         public DateTime InsertDate { get; set; }
+
+        internal Task FirstOrDefault()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

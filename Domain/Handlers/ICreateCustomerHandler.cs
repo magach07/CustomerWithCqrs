@@ -6,5 +6,6 @@ namespace CustomerWithCqrs.Domain.Commands.Handlers
     public interface ICreateCustomerHandler
     {
         public CreateCustomerResponse Handle (CreateCustomerRequest request);
+        public List<CreateCustomerResponse> GetAllCustomers ();
     }
 }
