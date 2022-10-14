@@ -1,3 +1,5 @@
+using System.Net;
+using System.Net.Mail;
 using CustomerWithCqrs.Domain.Commands.Requests;
 using CustomerWithCqrs.Domain.Commands.Responses;
 using Microsoft.AspNetCore.Mvc;
@@ -22,6 +24,22 @@ namespace CustomerWithCqrs.Domain.Commands.Handlers
                 };
 
                 responseCustomer.Add(addCustomer);
+
+                MailMessage email = new MailMessage();
+                email.From = new MailAddress("jonathanmagacho@gmail.com");
+                email.To.Add(request.Email);
+                email.Subject = "Customer C#";
+                email.IsBodyHtml = true;
+                email.Body = "<p>Olá " + request.Name + ", você foi adicionado a lista de Clientes da aplicação C# desenvolvida por Jonathan Magacho. <p>";
+
+                SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587);
+                smtp.UseDefaultCredentials = false;
+
+                //A senha é gerada unicamente para o processo dentro das configurações da conta google
+                smtp.Credentials = new NetworkCredential("jonathanmagacho@gmail.com", "bbczgipyemwjecuk");
+                smtp.EnableSsl = true;
+
+                smtp.Send(email);
 
                 return addCustomer;
             }

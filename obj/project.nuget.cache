@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ooWtyZkp+8p0uCWFm9h21CKiaAYAS1DlQjD9OseFcBG2M1vHK06heb/CSA+3woNwMD0nR9XPO7wJbthaw5sQDg==",
+  "dgSpecHash": "Ve93TzOBiXPv6YQzHw0HGAv/BAc/hBHV1y/kNtoGE7OvkiJ8rf/TySwh/zd3PO1R3JIYd1dNalFDv7XvjqVLig==",
   "success": true,
-  "projectFilePath": "c:\\Users\\Jonathan Demetrio\\source\\repos\\CustomerWithCqrs\\CustomerWithCqrs.csproj",
+  "projectFilePath": "C:\\Users\\Jonathan Demetrio\\source\\repos\\CustomerWithCqrs\\CustomerWithCqrs.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Jonathan Demetrio\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\Jonathan Demetrio\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
